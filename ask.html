@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>ASK</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+        <link rel="stylesheet" href="style.css"/>
+     </head>
+     <body>
+
+        <div class="hero-2">
+
+            <nav>
+                <div class="g-logo">
+                    <img src="images/logo/kindpng.png">
+                 </div>	   
+                 <!-- <div class="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="works.html">Works of STUDIO GHIBLI</a></li>
+                    </ul>
+                 </div> -->
+            </nav>
+    </div>
+
+    <div class="body">
+        <div class="headline">
+            <div class="text-head">
+                <h1>Ask</h1>
+            </div>
+            <div class="sgl">
+                <img src="images/logo/logo-1.png" width="200px" height="auto">
+            </div>
+        </div>
+        <form style="padding:100px 200px;">
+            <input type="text" name="name" placeholder="Enter the name" class="textbox" id="nameText" maxlength="10" minlength="4" >
+            <p id="error"> </p>
+            <br>
+            <textarea placeholder="Enter The Comment" style="width: 870px;height:100px ;"class="textbox" id="commentText" maxlength="50"></textarea><br><br>
+            
+            <div class="button-align">
+                <input type="button" value="Comment" class="button" id="btn">
+                <input type="button" value="Reset" class="button2" id="btn2">
+            </div>
+
+        </form>
+        <div class="comment-section">
+            <p id="name"></p>
+            <p id="comment"></p>
+        </div>
+    </div>
+    <script>
+    const name=document.getElementById("name");
+    const nameText=document.getElementById("nameText");
+    const comment=document.getElementById("comment");
+    const commentText=document.getElementById("commentText");
+    const error=document.getElementById("error");
+    const btn=document.getElementById("btn");
+    
+    btn.onclick=function(){
+
+        if(nameText.value.length==0){
+            error.innerHTML="*invalid username";
+            commentText.placeholder="*something type hear ??";    
+        }
+
+        else{
+            error.innerHTML="";
+            name.innerHTML=nameText.value;
+            comment.innerHTML=commentText.value;
+        }
+    }
+    btn2.onclick=function(){
+        nameText.value="";
+        commentText.value="";
+        error.innerHTML="";
+        commentText.placeholder="Enter The Comment";
+    }
+
+    </script>
+     </body>
+</html>
